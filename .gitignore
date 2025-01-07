@@ -59,10 +59,14 @@ doc/
 # =========== #
 .DS_Store
 
+# ===================== #
+# External Dependencies #
+# ===================== #
+ExternalDependencies/MetaXRSDK/
+
 # ================================#
 # MRTK2 for branch switching ease #
 # =============================== #
-[Aa]pp*/
 Assets/MixedRealityToolkit.Generated*
 Assets/StreamingAssets/GltfModels/
 Assets/StreamingAssets/GltfModels.meta

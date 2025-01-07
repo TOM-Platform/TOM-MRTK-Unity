@@ -276,12 +276,12 @@ namespace MixedReality.Toolkit.Input
                         }
 #pragma warning restore CS0612
 #pragma warning restore CS0618
-                        // Attempt palm facing away check if the interactor is associated with a hand.
-                        else if (handedness != InteractorHandedness.None &&
-                            (XRSubsystemHelpers.HandsAggregator?.TryGetPalmFacingAway(handedness.ToXRNode(), out isPalmFacingAway) ?? true))
-                        {
-                            hoverActive &= isPalmFacingAway;
-                        }
+                        // // Attempt palm facing away check if the interactor is associated with a hand.
+                        // else if (handedness != InteractorHandedness.None &&
+                        //     (XRSubsystemHelpers.HandsAggregator?.TryGetPalmFacingAway(handedness.ToXRNode(), out isPalmFacingAway) ?? true))
+                        // {
+                        //     hoverActive &= isPalmFacingAway;
+                        // }
                     }
 
                     return hoverActive && IsTracked;

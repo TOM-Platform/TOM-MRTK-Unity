@@ -88,3 +88,6 @@ crashlytics-build.properties
 */[Aa]ssets/TextMesh Pro*
 *.pfx
 *.pfx.meta
+
+# Exclude Config Data Changes
+*/[Aa]ssets/[Ss]cripts/TOM/Config/ConfigData.cs

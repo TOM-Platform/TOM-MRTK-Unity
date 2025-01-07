@@ -1,3 +1,60 @@
+# Client for TOM-Platform
+
+This is an experimental branch from MRTK source code XRI3 branch of MixedRealityToolkit-Unity.
+
+A Unity implementation of the client to support smart glasses and phones that receive data from the server
+- This [Unity3D](https://unity.com/) client serves as the primary front-end interface for devices such as smart glasses and phones. 
+- Users directly interact with this interface. 
+- It's constructed using [MRTK 3](https://github.com/MixedRealityToolkit/MixedRealityToolkit-Unity/tree/feature/XRI3) -- specifically XRI3 branch for its compatibility with Meta Quest devices and switch between hands, controller interaction modes correctly
+- It employs web socket communication to connect with the [TOM-Server-Python](../TOM-Server-Python).
+
+
+## Requirements
+
+- Unity3D v2022.3.43f1, or newer versions.
+      - (Older versions of v2022.3 are not yet tested for compatibility)
+- Meta XR Core SDK v71 as documented in [Quest Integration](./README_QuestIntegration.md)
+  - https://developers.meta.com/horizon/downloads/package/meta-xr-core-sdk
+  - Select `Download from Meta`
+  - Copy the file to 
+    - ```ExternalDependencies\MetaXRSDK\com.meta.xr.sdk.core-71.0.0.tgz```
+
+## Installation
+- Open the project in Unity
+- The TOM starter projects are located in `Assets/Scenes/TOM/`
+- Follow the platform-specific instructions below
+
+
+#### For Meta Quest (Quest 3, Quest Pro, Quest 3S)
+- Ensure that `Android Build Support` has been already added during Unity3D installation.  
+- For development -- both Mac or Windows can be used. 
+- **For deployment -- 
+  - **Windows** might be preferred, 
+  - as **MacOS** build has some quirks in controller display / interaction in the generated APK.
+- For configuration of IP to server, pls edit details in `UnityProjects/MRTKDevTemplate/Assets/Scripts/TOM/Config/ConfigData.cs`
+  - Note: `ConfigData.cs` is ignored in `UnityProjects/.gitignore`
+
+- Set your build setting to the Android Platform: 
+  - Go to `File > Build Settings`.
+  - Select **Android** and click **Switch Platform**.
+- Building the APK
+  - Click on Build in `File > Build Settings`.
+  - Select an output target (eg. create Builds folder in UnityProject/MRTKDevTemplate/Builds/TOMTemplate.apk) *Builds/Build folder name are ignored in .gitignore.
+- Building and running on Meta Quest
+  - Connect a USB-C / link cable to the Meta Quest 
+  - Authorize the connection from Meta Quest headset if you have not done so. 
+  - Refresh the devices list, and the Quest device should appear and select it. 
+  - Click on `Build and Run` to build, deploy and run the APK on the device.
+
+- (Optional) Advanced Options for Debugging / Wifi
+  - Android Studio can be used to connect the Meta Quest, to view logcat logs about the application.
+  - Wifi (via ADB)
+    - When the device is connected via cable,
+    - Follow the guide at [Using ADB with Meta Quest](https://developers.meta.com/horizon/documentation/native/android/ts-adb/#connect-adb-via-wi-fi) to setup wifi mode
+
+
+---
+
 # Mixed Reality Toolkit for Unity
 
 ![Mixed Reality Toolkit](./Images/MRTK_Unity_header.png)
